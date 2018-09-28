@@ -9,14 +9,15 @@ __author__ = 'Иванов Сергей Николаевич'
 # Подсказки:
 # * постарайтесь решить задачу с применением арифметики и цикла while;
 # * при желании и понимании решите задачу с применением цикла for.
-# number = input("Введите целое число")
-# list_number = list(number)
-# i = 1
-# while i < len(list_number):
-#     if list_number[i - 1] < list_number[i]:
-#         max = list_number[i]
-#     i += 1
-# print(max)
+
+number = input("Введите целое число ")
+list_number = [int(i) for i in list(number)]
+maxim = 0
+for num in list_number:
+    maxim = num if maxim < num else maxim
+print(maxim)
+
+
 
 
 
@@ -26,10 +27,11 @@ __author__ = 'Иванов Сергей Николаевич'
 # Подсказки:
 # * постарайтесь сделать решение через действия над числами;
 # * при желании и понимании воспользуйтесь синтаксисом кортежей Python.
-a = input("Введите переменную a")
-b = input("Введите переменную b")
-(a, b) = (b, a)
-print(a, b)
+
+# a = input("Введите переменную a")
+# b = input("Введите переменную b")
+# (a, b) = (b, a)
+# print(a, b)
 
 
 
@@ -39,3 +41,7 @@ print(a, b)
 # Для вычисления квадратного корня воспользуйтесь функцией sqrt() модуля math:
 # import math
 # math.sqrt(4) - вычисляет корень числа 4
+
+import math
+
+
