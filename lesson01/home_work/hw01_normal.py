@@ -10,13 +10,22 @@ __author__ = 'Иванов Сергей Николаевич'
 # * постарайтесь решить задачу с применением арифметики и цикла while;
 # * при желании и понимании решите задачу с применением цикла for.
 
-number = input("Введите целое число ")
-list_number = [int(i) for i in list(number)]
-maxim = 0
-for num in list_number:
-    maxim = num if maxim < num else maxim
-print(maxim)
+# number = input("Введите целое число ")
+# list_number = [int(i) for i in list(number)]
+# maxim = 0
+# for num in list_number:
+#     maxim = num if maxim < num else maxim
+# print(maxim)
 
+x = int(input("Введите число "))
+maximum = 0
+while x > 0:
+    number = x % 10
+    if number > maximum:
+        maximum = number
+    x = (x - (x % 10))/10
+
+print(int(maximum))
 
 
 
