@@ -9,14 +9,14 @@ __author__ = 'Иванов Сергей Николаевич'
 # Подсказки:
 # * постарайтесь решить задачу с применением арифметики и цикла while;
 # * при желании и понимании решите задачу с применением цикла for.
-number = input("Введите целое число")
-list_number = list(number)
-i = 1
-while i < len(list_number):
-    if list_number[i - 1] < list_number[i]:
-        max = list_number[i]
-    i += 1
-print(max)
+# number = input("Введите целое число")
+# list_number = list(number)
+# i = 1
+# while i < len(list_number):
+#     if list_number[i - 1] < list_number[i]:
+#         max = list_number[i]
+#     i += 1
+# print(max)
 
 
 
@@ -26,6 +26,11 @@ print(max)
 # Подсказки:
 # * постарайтесь сделать решение через действия над числами;
 # * при желании и понимании воспользуйтесь синтаксисом кортежей Python.
+a = input("Введите переменную a")
+b = input("Введите переменную b")
+(a, b) = (b, a)
+print(a, b)
+
 
 
 # Задача-3: Напишите программу, вычисляющую корни квадратного уравнения вида
