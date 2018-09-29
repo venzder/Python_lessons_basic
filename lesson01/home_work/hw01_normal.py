@@ -1,4 +1,3 @@
-
 __author__ = 'Иванов Сергей Николаевич'
 
 # Задача-1: Дано произвольное целое число, вывести самую большую цифру этого числа.
@@ -17,17 +16,14 @@ __author__ = 'Иванов Сергей Николаевич'
 #     maxim = num if maxim < num else maxim
 # print(maxim)
 
-x = int(input("Введите число "))
-maximum = 0
-while x > 0:
-    number = x % 10
-    if number > maximum:
-        maximum = number
-    x = (x - (x % 10))/10
-
-print(int(maximum))
-
-
+# x = int(input("Введите число "))
+# maximum = 0
+# while x > 0:
+#     number = x % 10
+#     if number > maximum:
+#         maximum = number
+#     x = (x - (x % 10))/10
+# print(int(maximum))
 
 
 # Задача-2: Исходные значения двух переменных запросить у пользователя.
@@ -43,7 +39,6 @@ print(int(maximum))
 # print(a, b)
 
 
-
 # Задача-3: Напишите программу, вычисляющую корни квадратного уравнения вида
 # ax² + bx + c = 0.
 # Коэффициенты уравнения вводятся пользователем.
@@ -53,4 +48,16 @@ print(int(maximum))
 
 import math
 
-
+a = int(input("Введите коэффициент a"))
+b = int(input("Введите коэффициент b"))
+c = int(input("Введите коэффициент c"))
+discr = b ** 2 - (4 * a * c)
+if discr > 0:
+    x1 = (-b + math.sqrt(discr)) / 2 * a
+    x2 = (-b - math.sqrt(discr)) / 2 * a
+    print(x1, x2)
+elif discr == 0:
+    x = (-b / 2 * a)
+    print(x)
+else:
+    print("Нет решений")
