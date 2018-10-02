@@ -5,22 +5,22 @@
 # если такой корень вообще можно извлечь
 # Пример: Дано: [2, -5, 8, 9, -25, 25, 4]   Результат: [3, 5, 2]
 
-import random
-import math
-
-list_1 = []
-list_2 = []
-i = 0
-while i < 20:
-    list_1.append(random.randint(-100, 100))
-    i += 1
-print(list_1)
-for ind in list_1:
-    if type(math.sqrt(ind)) is int:
-        list_2.append(math.sqrt(ind))
-    else:
-        continue
-print(list_2)
+# import random
+# import math
+#
+# list_1 = []
+# list_2 = []
+# i = 0
+# while i < 20:
+#     list_1.append(random.randint(-100, 100))
+#     i += 1
+# print(list_1)
+# for ind in list_1:
+#     if type(math.sqrt(ind)) is int:
+#         list_2.append(math.sqrt(ind))
+#     else:
+#         continue
+# print(list_2)
 
 
 
@@ -42,6 +42,16 @@ print(list_2)
 # в диапазоне от -100 до 100. В списке должно быть n - элементов.
 # Подсказка:
 # для получения случайного числа используйте функцию randint() модуля random
+
+import random
+
+n = int(input("Введите количество элементов в списке"))
+list_1 = []
+i = 0
+while i < n:
+    list_1.append(random.randint(-100, 100))
+    i += 1
+print(list_1)
 
 
 
