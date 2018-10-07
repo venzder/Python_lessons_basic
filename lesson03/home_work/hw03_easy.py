@@ -9,12 +9,13 @@ def my_round(number, ndigits):
     if int(r_number[-1]) < 5:
         r_number[-2] = int(r_number[-2])
         r_number = r_number[:-1]
-        r_number = int("".join(str(x) for x in r_number)
+        r_number = float("".join(str(x) for x in r_number)
+        return r_number
     else:
         r_number[-2] = int(r_number[-2]) + 1
         r_number = r_number[:-1]
-        r_number = int("".join(str(x) for x in r_number)
-    return r_number
+        r_number = float("".join(str(x) for x in r_number)
+        return r_number
 
 
 
