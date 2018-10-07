@@ -5,14 +5,16 @@
 # Для решения задачи не используйте встроенные функции и функции из модуля math.
 
 def my_round(number, ndigits):
-    r_number = f"{number:.{ndigits + 1}f}"
+    r_number = list(f"{number:.{ndigits + 1}f}")
     if int(r_number[-1]) < 5:
-        r_number[-2] = r_number[-2]
+        r_number[-2] = int(r_number[-2])
         r_number = r_number[:-1]
+        r_number = int("".join(str(x) for x in r_number)
     else:
         r_number[-2] = int(r_number[-2]) + 1
         r_number = r_number[:-1]
-    return int(r_number)
+        r_number = int("".join(str(x) for x in r_number)
+    return r_number
 
 
 
