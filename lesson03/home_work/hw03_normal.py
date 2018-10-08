@@ -2,17 +2,17 @@
 # Напишите функцию, возвращающую ряд Фибоначчи с n-элемента до m-элемента.
 # Первыми элементами ряда считать цифры 1 1
 
-def fibonacci(n, m):
-    fib = [n]
-    for i, num in enumerate(fib):
-        if i > 1 and num <= m:
-            fib.append(fib[i] + fib[i - 1])
-        else:
-            fib.append(num)
-
-
-
-print(fibonacci(1, 10))
+# def fibonacci(n, m):
+#     fib = [n]
+#     for i, num in enumerate(fib):
+#         if i > 1 and num <= m:
+#             fib.append(fib[i] + fib[i - 1])
+#         else:
+#             fib.append(num)
+#
+#
+#
+# print(fibonacci(1, 10))
 
 
 # Задача-2:
@@ -21,12 +21,12 @@ print(fibonacci(1, 10))
 # Для решения данной задачи нельзя использовать встроенную функцию и метод sort()
 
 
-# def sort_to_max(origin_list):
-#     for i, num in enumerate(origin_list):
-#         if i < len(origin_list):
-#             num(i)
-#
-# sort_to_max([2, 10, -12, 2.5, 20, -11, 4, 4, 0])
+def sort_to_max(origin_list):
+    for i, num in enumerate(origin_list):
+        if i < len(origin_list) and origin_list[i] > origin_list [i + 1]:
+            origin_list[i], origin_list[i + 1] = origin_list[i + 1], origin_list[i]
+
+sort_to_max([2, 10, -12, 2.5, 20, -11, 4, 4, 0])
 
 # Задача-3:
 # Напишите собственную реализацию стандартной функции filter.
