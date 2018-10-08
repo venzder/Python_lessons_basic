@@ -23,10 +23,10 @@
 
 def sort_to_max(origin_list):
     for i, num in enumerate(origin_list):
-        if i < len(origin_list) and origin_list[i] > origin_list [i + 1]:
+        if i < len(origin_list)-1 and origin_list[i] > origin_list[i + 1]:
             origin_list[i], origin_list[i + 1] = origin_list[i + 1], origin_list[i]
 
-sort_to_max([2, 10, -12, 2.5, 20, -11, 4, 4, 0])
+print(sort_to_max([2, 10, -12, 2.5, 20, -11, 4, 4, 0]))
 
 # Задача-3:
 # Напишите собственную реализацию стандартной функции filter.
