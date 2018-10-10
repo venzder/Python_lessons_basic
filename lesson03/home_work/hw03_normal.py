@@ -2,29 +2,12 @@
 # Напишите функцию, возвращающую ряд Фибоначчи с n-элемента до m-элемента.
 # Первыми элементами ряда считать цифры 1 1
 
-def fibonacci(n, m):
-    fib = []
-    fib_n = []
-    fib1 = 1
-    fib2 = 1
-    fib.append(fib1)
-    fib.append(fib2)
-    i = 2
-    while i < m:
-        fib_sum = fib2 + fib1
-        fib1 = fib2
-        fib2 = fib_sum
-        fib.append(fib2)
-        i += 1
-    for x in fib:
-        if x >= n:
-            fib_n.append(x)
-    return fib_n
-
-
-
-
-print(fibonacci(1, 10))
+# def fibonacci(n, m):
+#     fib = []
+#     for i in range(n, m)
+#
+#
+# print(fibonacci(1, 10))
 
 # Задача-2:
 # Напишите функцию, сортирующую принимаемый список по возрастанию.
@@ -48,21 +31,21 @@ print(fibonacci(1, 10))
 # Напишите собственную реализацию стандартной функции filter.
 # Разумеется, внутри нельзя использовать саму функцию filter.
 
-# x = [4, 5, 7, 9]
-# def func(x):
-#     if x % 3 == 0:
-#         return 1
-#     else:
-#         return 0
-#
-# def filter_list(fn, list_1):
-#     list_2 = []
-#     for i in list_1:
-#         if fn(i) == True:
-#             list_2.append(i)
-#     return list_2
-#
-# print(filter_list(func, x))
+x = [4, 5, 7, 9]
+def func(x):
+    if x % 3 == 0:
+        return 1
+    else:
+        return 0
+
+def filter_list(fn, list_1):
+    list_2 = []
+    for i in list_1:
+        if fn(i) == True:
+            list_2.append(i)
+    return list_2
+
+print(filter_list(func, x))
 
 
 
