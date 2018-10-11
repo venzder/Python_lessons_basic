@@ -13,13 +13,47 @@
 
 # Подсказка: воспользоваться методом .format()
 
+# fruits = ["яблоко", "банан", "киви", "арбуз"]
+# i = 0
+# while i < len(fruits):
+#     print("{}. {:>10}".format(i+1, fruits[i]))
+#     i += 1
 
 # Задача-2:
 # Даны два произвольные списка.
 # Удалите из первого списка элементы, присутствующие во втором списке.
+
+# import random
+#
+# list_1 = []
+# list_2 = []
+# i = 0
+# while i < 7:
+#     list_1.append(random.randint(0, 10))
+#     list_2.append(random.randint(0, 10))
+#     i += 1
+# print(list_1, list_2)
+# list_3 = list(set(list_1) - set(list_2))
+# print(list_3)
 
 
 # Задача-3:
 # Дан произвольный список из целых чисел.
 # Получите НОВЫЙ список из элементов исходного, выполнив следующие условия:
 # если элемент кратен двум, то разделить его на 4, если не кратен, то умножить на два.
+
+import random
+
+list_1 = []
+list_2 = []
+i = 0
+while i < 20:
+    list_1.append(random.randint(0, 100))
+    i += 1
+print(list_1)
+for ind in list_1:
+    if ind % 2 == 0:
+        list_2.append(ind/4)
+    else:
+        list_2.append(ind*2)
+print(list_2)
