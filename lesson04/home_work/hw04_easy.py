@@ -6,16 +6,21 @@
 # квадратами элементов исходного списка
 # [1, 2, 4, 0] --> [1, 4, 16, 0]
 
-import random
-
-list_1 = [random.randint(1, 100) for num in range(10)]
-print(list_1)
-list_2 = [n**2 for n in list_1]
-print(list_2)
+# import random
+#
+# list_1 = [random.randint(1, 100) for num in range(10)]
+# print(list_1)
+# list_2 = [n**2 for n in list_1]
+# print(list_2)
 
 # Задание-2:
 # Даны два списка фруктов.
 # Получить список фруктов, присутствующих в обоих исходных списках.
+
+list_1 = ["слива", "груша", "яблоко", "персик", "виноград"]
+list_2 = ["груша", "арбуз", "лимон", "персик", "памело"]
+list_3 = [i for i in list_1 if i in list_2]
+print(list_3)
 
 # Задание-3:
 # Дан список, заполненный произвольными числами.
