@@ -79,7 +79,7 @@ result_all = []
 i = 2
 while i < len(line):
     result = []
-    if line[i-1].islower() and line[i-2].islower():
+    if line[i - 1].islower() and line[i - 2].islower():
         while i < len(line):
             if line[i].isupper():
                 result.append(line[i])
@@ -89,14 +89,15 @@ while i < len(line):
     i += 1
     result_all.append(result)
 result_all = [li for li in result_all if len(li) > 3]
-result_all = [li.remove(li[-1])for li in result_all]
+for li in result_all:
+    li.remove(li[-1])
+for li in result_all:
+    li.remove(li[-1])
+result_all = [str(''.join(str(x) for x in li)) for li in result_all]
+result_all = ", ".join(result_all)
+
+
 print(result_all)
-# result_all = [li for li in result_all if li != []]
-# result_all = [str(''.join(str(x) for x in li)) for li in result_all]
-# result_all = ", ".join(result_all)
-#
-#
-# print(result_all)
 
 
 # Задание-3:
