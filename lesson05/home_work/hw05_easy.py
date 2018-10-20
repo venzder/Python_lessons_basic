@@ -4,6 +4,7 @@
 # И второй скрипт, удаляющий эти папки.
 
 import os
+import shutil
 #
 # i = 1
 # while i <= 9:
@@ -30,9 +31,14 @@ import os
 # Задача-2:
 # Напишите скрипт, отображающий папки текущей директории.
 
-dir_path = os.path.join(os.getcwd())
-list_dir = [i for i in os.listdir(dir_path) if os.path.isdir(i)]
-print(list_dir)
+# dir_path = os.path.join(os.getcwd())
+# list_dir = [i for i in os.listdir(dir_path) if os.path.isdir(i)]
+# print(list_dir)
 
 # Задача-3:
 # Напишите скрипт, создающий копию файла, из которого запущен данный скрипт.
+
+dir_path = os.path.join(__file__)
+path_copy = os.path.join(os.getcwd(), "newfile.py")
+shutil.copy2(dir_path, path_copy)
+
