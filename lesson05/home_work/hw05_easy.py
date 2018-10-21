@@ -38,7 +38,39 @@ import shutil
 # Задача-3:
 # Напишите скрипт, создающий копию файла, из которого запущен данный скрипт.
 
-dir_path = os.path.join(__file__)
-path_copy = os.path.join(os.getcwd(), "newfile.py")
-shutil.copy2(dir_path, path_copy)
+# dir_path = os.path.join(__file__)
+# path_copy = os.path.join(os.getcwd(), "newfile.py")
+# shutil.copy2(dir_path, path_copy)
 
+def change_dir(direct):
+    try:
+        path = os.path.join(os.getcwd(), direct)
+        os.chdir(path)
+        print("Успешно перешел")
+    except FileNotFoundError:
+        print("Дирректория не найдена")
+
+def list_dir():
+    path_dir = os.path.join(os.getcwd())
+    list_direct = os.listdir(path_dir)
+    print(list_direct)
+
+def del_dir(direct):
+    dir_path = os.path.join(os.getcwd(), direct)
+    try:
+        os.rmdir(dir_path)
+        print(f"Дирректория {direct} успешно удалена")
+    except FileNotFoundError:
+        print("Дирректория уже удалена или не существует")
+
+def add_dir(direct):
+    dir_path = os.path.join(os.getcwd(), direct)
+    try:
+        os.mkdir(dir_path)
+        print(f"Дирректория {direct} успешно создана")
+    except FileExistsError:
+        print("Такая директория уже существует")
+
+
+if __name__ == "__main__":
+    main()
