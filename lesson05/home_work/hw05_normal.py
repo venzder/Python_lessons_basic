@@ -13,3 +13,30 @@
 # Для решения данной задачи используйте алгоритмы из задания easy,
 # оформленные в виде соответствующих функций,
 # и импортированные в данный файл из easy.py
+
+import Python_lessons_basic.lesson05.home_work.hw05_easy as easy
+
+
+while True:
+    choice = input("Хотите совершить какое то действие с папками? Y/N")
+    if choice.lower() == "y":
+        print("[1] - Перейти в папку")
+        print("[2] - Просмотреть содержимое текущей папки")
+        print("[3] - Удалить папку")
+        print("[4] - Создать папку")
+        choice_1 = input("Введите номер действия, которое Вы хотите совершить")
+        if choice_1 == "1":
+            direct = input("Введите дирректорию")
+            easy.change_dir(direct)
+        elif choice_1 == "2":
+            easy.list_dir()
+        elif choice_1 == "3":
+            direct = input("Введите название удаляемой папки")
+            easy.del_dir(direct)
+        elif choice_1 == "4":
+            direct = input("Введите название создаваемой папки")
+            easy.add_dir(direct)
+    elif choice.lower() == "n":
+        break
+    else:
+        print("Попробуйте выбрать еще раз")
