@@ -23,7 +23,7 @@ class Triangle:
     def height(self, side):
         return 2 * self.area / side
 
-triangle1 = Triangle((24, 7), (46, 45), (35, 17))
+triangle1 = Triangle((24, 7), (46, 45), (36, 17))
 print(triangle1.height(d1))
 
 
