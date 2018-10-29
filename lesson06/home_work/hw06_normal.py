@@ -15,3 +15,39 @@
 #  (Ученик --> Класс --> Учителя --> Предметы)
 # 4. Узнать ФИО родителей указанного ученика
 # 5. Получить список всех Учителей, преподающих в указанном классе
+
+
+class Person:
+    def __init__(self, name, surname, patronymic):
+        self.name = name
+        self.surname = surname
+        self.patronymic = patronymic
+
+    def full_name(self):
+        return f"{self.name} {self.surname} {self.patronymic}"
+
+
+class Student(Person):
+    def __init__(self, name, surname, patronymic, class_room):
+        super(Student, self).__init__(name, surname, patronymic)
+        self.class_room = class_room
+
+
+class Teacher(Person):
+    def __init__(self, name, surname, patronymic, subject):
+        super(Teacher, self).__init__(name, surname, patronymic)
+        self.subject = subject
+
+
+class Mother(Person):
+    def __init__(self, name, surname, patronymic):
+        super(Mother, self).__init__(name, surname, patronymic)
+
+
+class Dad(Person):
+    def __init__(self, name, surname, patronymic):
+        super(Dad, self).__init__(name, surname, patronymic)
+
+
+class Classroom:
+    def __init__(self, class_num, subject1):
