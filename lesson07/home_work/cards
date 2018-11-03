@@ -1,0 +1,19 @@
+import random
+
+
+# class Generator:
+#     def __init__(self):
+#
+#     def get_line1(self):
+#         numbers = (itm for itm in range(1, 70)])
+#         random.randint
+
+class Card:
+    def __init__(self):
+
+    def get_line(self):
+        list_number = [itm for itm in range(1, 70)]
+        numbers = [random.choice(list_number) for itm in range(5)]
+        numbers.append(" ") * 4
+
+
