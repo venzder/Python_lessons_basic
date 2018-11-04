@@ -1,28 +1,28 @@
 import random
 
 
-# class Generator:
-#     def __init__(self):
-#
-#     def get_line1(self):
-#         numbers = (itm for itm in range(1, 70)])
-#         random.randint
 
 class Card:
-    def __init__(self):
+    def __init__(self, player):
+        self.player = player
+        self.game_set = random.sample(range(90), 30)
+        self.player_set = random.sample(self.game_set, 15)
+        self.player_field = [self.player_set[:5], self.player_set[5:10], self.player_set[10:]]
 
     def get_lines(self):
-        game_set = random.sample(range(90), 30)
-        player_set = random.sample(game_set, 15)
-        player_field = [player_set[:5], player_set[5:10], player_set[10:]]
-        for p1line in player_field:
-            p1line.sort()
-            p1line.insert(random.randint(0, 4), ' ')
-            p1line.insert(random.randint(0, 5), ' ')
-            p1line.insert(random.randint(0, 6), ' ')
-            p1line.insert(random.randint(0, 7), ' ')
-        return player_field
+        # game_set = random.sample(range(90), 30)
+        # player_set = random.sample(game_set, 15)
+        # player_field = [player_set[:5], player_set[5:10], player_set[10:]]
+        for playerline in self.player_field:
+            playerline.sort()
+            playerline.insert(random.randint(0, 4), ' ')
+            playerline.insert(random.randint(0, 5), ' ')
+            playerline.insert(random.randint(0, 6), ' ')
+            playerline.insert(random.randint(0, 7), ' ')
+            return (self.player_field)
 
-card = Card
-print(card.get_lines())
+
+card = Card("pc")
+
+print(card.get_lines)
 
