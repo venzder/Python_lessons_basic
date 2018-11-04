@@ -11,9 +11,18 @@ import random
 class Card:
     def __init__(self):
 
-    def get_line(self):
-        list_number = [itm for itm in range(1, 70)]
-        numbers = [random.choice(list_number) for itm in range(5)]
-        numbers.append(" ") * 4
+    def get_lines(self):
+        game_set = random.sample(range(90), 30)
+        player_set = random.sample(game_set, 15)
+        player_field = [player_set[:5], player_set[5:10], player_set[10:]]
+        for p1line in player_field:
+            p1line.sort()
+            p1line.insert(random.randint(0, 4), ' ')
+            p1line.insert(random.randint(0, 5), ' ')
+            p1line.insert(random.randint(0, 6), ' ')
+            p1line.insert(random.randint(0, 7), ' ')
+        return player_field
 
+card = Card
+print(card.get_lines())
 
