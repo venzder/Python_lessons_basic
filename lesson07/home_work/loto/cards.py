@@ -41,26 +41,27 @@ class Cardcomputer(Card):
         self.name_card = name_card
 
 
-class Barrelgen:
-    def __init__(self, round):
-        self.round = round
-        self.list_barrel = [itm for itm in range(1, 91)]
+def get_barrel(round):
+    list_barrel = [itm for itm in range(1, 91)]
+    global barrel
+    global rest_barrels
+    i = 0
+    while i < round:
+        barrel = random.choice(list_barrel)
+        list_barrel.remove(barrel)
+        rest_barrels = len(list_barrel)
+        i += 1
+    return f"Новый боченок: {barrel}. Осталось: {rest_barrels}"
 
-    def get_barrel(self):
-        i = 0
-        while i < self.round:
-            barrel = random.choice(self.list_barrel)
-            self.list_barrel.remove(barrel)
-            rest_barrels = len(self.list_barrel)
-            i += 1
-        return f"Новый боченок: {barrel}. Осталось: {rest_barrels}"
+
+# def get_run():
+
 
 
 if __name__ == "__main__":
 
     card = Cardcomputer()
-    barrel = Barrelgen(5)
-
     card.get_card()
 
-    print(barrel.get_barrel())
+    print(get_barrel(5))
+    print(barrel)
