@@ -3,26 +3,64 @@ import random
 
 
 class Card:
-    def __init__(self, player):
-        self.player = player
+    def __init__(self, name_card = ""):
+        self.name_card = name_card
         self.game_set = random.sample(range(90), 30)
         self.player_set = random.sample(self.game_set, 15)
         self.player_field = [self.player_set[:5], self.player_set[5:10], self.player_set[10:]]
 
+    @property
     def get_lines(self):
-        # game_set = random.sample(range(90), 30)
-        # player_set = random.sample(game_set, 15)
-        # player_field = [player_set[:5], player_set[5:10], player_set[10:]]
         for playerline in self.player_field:
             playerline.sort()
             playerline.insert(random.randint(0, 4), ' ')
             playerline.insert(random.randint(0, 5), ' ')
             playerline.insert(random.randint(0, 6), ' ')
             playerline.insert(random.randint(0, 7), ' ')
-            return (self.player_field)
+        return self.player_field
 
 
-card = Card("pc")
+    def get_card(self):
+        print("{:-^26}".format(self.name_card))
+        for line in self.get_lines:
+            for n in line:
+                print('{0:>2}'.format(n), end=' ')
+            print()
+        print('{:-^26}\n'.format('-'))
 
-print(card.get_lines)
 
+class Cardplayer(Card):
+    def __init__(self, name_card=" Ваша карта "):
+        super(). __init__(self)
+        self.name_card = name_card
+
+
+class Cardcomputer(Card):
+    def __init__(self, name_card=" Карта компьютера "):
+        super(). __init__(self)
+        self.name_card = name_card
+
+
+class Barrelgen:
+    def __init__(self, round):
+        self.round = round
+        self.list_barrel = [itm for itm in range(1, 91)]
+
+    def get_barrel(self):
+        i = 0
+        while i < self.round:
+            barrel = random.choice(self.list_barrel)
+            self.list_barrel.remove(barrel)
+            rest_barrels = len(self.list_barrel)
+            i += 1
+        return f"Новый боченок: {barrel}. Осталось: {rest_barrels}"
+
+
+if __name__ == "__main__":
+
+    card = Cardcomputer()
+    barrel = Barrelgen(5)
+
+    card.get_card()
+
+    print(barrel.get_barrel())
