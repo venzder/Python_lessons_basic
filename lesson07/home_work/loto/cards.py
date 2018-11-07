@@ -13,26 +13,28 @@ class Card:
     def get_lines(self):
         for playerline in self.player_field:
             playerline.sort()
-            playerline.insert(random.randint(0, 4), ' ')
-            playerline.insert(random.randint(0, 5), ' ')
-            playerline.insert(random.randint(0, 6), ' ')
-            playerline.insert(random.randint(0, 7), ' ')
+            playerline.insert(random.randint(0, 4), '  ')
+            playerline.insert(random.randint(0, 5), '  ')
+            playerline.insert(random.randint(0, 6), '  ')
+            playerline.insert(random.randint(0, 7), '  ')
         return self.player_field
 
 
     def get_card(self):
         print("{:-^26}".format(self.name_card))
         for line in self.get_lines:
+            # mystring = " ".join(str(x) for x in line)
             for n in line:
-                print('{0:>2}'.format(n), end=' ')
+                print("{0:>2}".format(n), end=" ")
             print()
-        print('{:-^26}\n'.format('-'))
+            # print(mystring)
+        print("{:-^26}\n".format("-"))
 
     def strikeout(self, barrel):
         for line in self.player_field:
             for x in line:
                 if x == barrel:
-                    x = "><"
+                    x = "-"
         return self.get_lines
 
 class Cardplayer(Card):
@@ -73,8 +75,9 @@ class Barrel:
 if __name__ == "__main__":
 
     card = Cardcomputer()
-    card.strikeout(9)
+
     card.get_card()
+    card.strikeout(56)
 
 
 
