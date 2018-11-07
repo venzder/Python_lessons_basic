@@ -28,6 +28,12 @@ class Card:
             print()
         print('{:-^26}\n'.format('-'))
 
+    def strikeout(self, barrel):
+        for line in self.player_field:
+            for x in line:
+                if x == barrel:
+                    x = "><"
+        return self.get_lines
 
 class Cardplayer(Card):
     def __init__(self, name_card=" Ваша карта "):
@@ -41,27 +47,39 @@ class Cardcomputer(Card):
         self.name_card = name_card
 
 
-def get_barrel(round):
-    list_barrel = [itm for itm in range(1, 91)]
-    global barrel
-    global rest_barrels
-    i = 0
-    while i < round:
-        barrel = random.choice(list_barrel)
-        list_barrel.remove(barrel)
-        rest_barrels = len(list_barrel)
-        i += 1
-    return f"Новый боченок: {barrel}. Осталось: {rest_barrels}"
+class Barrel:
+    def __init__(self):
+        self.list_barrel = [itm for itm in range(1, 91)]
+        self.barrel = 0
+        self.rest_barrels = 0
 
 
-# def get_run():
+    def get_barrel(self, round):
+        i = 0
+        while i < round:
+            self.barrel = random.choice(self.list_barrel)
+            self.list_barrel.remove(self.barrel)
+            self.rest_barrels = len(self.list_barrel)
+            i += 1
+        return f"Новый боченок: {self.barrel} (Осталось {self.rest_barrels})"
+
+
+# def get_run(round):
+#     barrel = Barrel()
+
 
 
 
 if __name__ == "__main__":
 
     card = Cardcomputer()
+    card.strikeout(9)
     card.get_card()
 
-    print(get_barrel(5))
-    print(barrel)
+
+
+    barrel = Barrel()
+    print(barrel.get_barrel(8))
+    print(barrel.rest_barrels)
+
+
